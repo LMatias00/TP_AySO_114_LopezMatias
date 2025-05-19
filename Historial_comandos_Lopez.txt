@@ -1,0 +1,321 @@
+pwd
+echo hola
+ls
+ls -l
+mkdir clase4
+ls -l
+cd clase4/
+pwd
+cat > texto1.txt
+ls -l
+cat texto1.txt
+ls -l
+cat << FIN > texto2.txt
+linea 4
+linea 5
+linea 6
+FIN
+
+ls -l
+cat texto2.txt 
+cat *.txt
+cat texto1.txt >> texto2.txt
+cat texto2.txt
+ls -l
+cat << EOF >texto3.txt
+linea 7
+linea 8
+linea 9
+EOF
+
+ls -l
+cat texto1.txt texto3.txt >texto4.txt
+ls -l
+cat texto4.txt
+echo hola
+echo hola > hola.txt
+ls -l
+cat hola.txt
+echo chau
+echo chau >> hola.txt
+cat hola.txt
+man grep
+grep chau hola.txt
+grep CHAU hola.txt
+grep -i CHAU hola.txt
+cat texto4.txt
+grep 7 texto4.txt
+grep 7 texto4.txt > filtro7.txt
+ls -l
+cat filtro7.txt
+grep 8 texto4.txt
+grep 8 texto4.txt > texto1.txt
+ls -l
+cat texto1.txt
+grep 8 texto4.txt
+grep -v 8 texto4.txt
+grep -c 8 texto4.txt
+grep -c linea texto4.txt
+grep -n 8 texto4.txt
+cd ..
+pwd
+tree
+apt  install tree
+sudo apt  install tree
+snap install tree
+apt  install tree
+snap install tree
+sudo snap install tree
+tree
+pwd
+cd clase4
+pwd
+touch texto5.txt
+ls -l
+cp texto2.txt textocp.txt
+ls -l
+cat textocp.txt
+cat texto2.txt
+mv textocp.txt textocp2.txt
+ls -l
+mv textocp2.txt /home/vagrant
+ls -l
+ls -l /home/vagrant
+cd ..
+rm clase4/
+rm  -r clase4/
+ls -l
+whoami
+id
+w
+pwd
+cd ..
+pwd
+ls -l
+mkdir clase4
+mkdir -p {clase1,clase2}/{teoria,practica}
+mkdir -p {compra1/vendedor{1..3},{compra2/{vendedor{1..3},repositor}}
+pwd
+cd vagrant
+mkdir -p {compra1/vendedor{1..3},{compra2/{vendedor{1..3},repositor}}
+ls -l
+cat /etc/passwd
+cat /etc/shadow
+sudo cat /etc/shadow
+groupadd Alumnos
+sudo groupadd Alumnos
+cat /etc/group
+useradd -m -s /bin/bash -c "Matias" -G Matias 
+sudo useradd -m -s /bin/bash -c "matias" -G matias
+sudo useradd -m -s /bin/bash -c "Alumno Matias" -G Alumnos Matias
+cat /etc/group
+passwd Matias
+sudo passwd Matias
+exit
+whoami
+id
+sudo matias
+su matias
+whoami
+id
+w
+last
+grep vagrant /etc/passwd
+sudo grep vagrant /etc/shadow
+su matias
+useradd -m -s /bin/bash -c"esto es un comentario" newuserr
+useradd -m -s /bin/bash -c "esto es un comentario" newuser
+groupadd NewGroup
+sudo groupadd nombre_del_grupo
+sudo useradd -m -s /bin/bash -c "esto es un comentario" -g nombre_del_grupo newuser
+sudo psswd vagrant
+sudo passwd newuser
+su - matias
+grep matias
+whoami
+id
+grep vagrant /etc/passwd
+grep matias /etc/passwd
+sudo adduser matias
+grep vagrant /etc/passwd
+su matias
+sudo groupadd NewGroup
+grep NewGroup /etc/group
+groupadd NewGroup
+groupadd Alumnos
+useradd -m -s /bin/bash -c "matias" -G Alumnos pepe
+useradd -m -s /bin/bash -c "Alumno pepe" -G Alumnos pepe
+whoami
+useradd -m -s /bin/bash -c "Alumno pepe" -G Alumnos pepe
+groupadd Alumnos
+grep vagrant /etc/passwd
+s
+s
+ss
+s
+useradd -m -s /bin/bash -c "esto es un comentario" newuser
+groupadd Alumnos
+useradd -m -s /bin/bash -c "Alumno pepe" -G Alumnos pepe
+sudo useradd -m -s /bin/bash -c "Alumno pepe" -G Alumnos pepe
+sudo passwd pepe
+grep pepe /etc/passwd
+grep -i alumno /etc/group
+id
+ls -l /home
+passwd pepe
+su - pepe
+sudo grep pepe /etc/shadow | awk -F ':' '{print $2}'
+su
+su - pepe
+sudo useradd -m -s /bin/bash -c "usuario juan" -p "$(sudo grep pepe /etc/shadow | awk -F ':' '{print $2}')" juan
+sudo grep -E 'pepe|juan' /etc/shadow |awk -F ':' '{print $2}'
+diff <(sudo grep 'pepe' /etc/shadow | awk -F ':' '{print $2}') <(sudo grep 'juan' /etc/shadow | awk -F ':' '{print $2}')
+usermod -help
+usermod –help
+usermod -s /bin/sh pepe
+usermod -s /bin/sh [usuario]
+grep pepe /etc/passwd
+usermod -G [grupo] [usuario]
+sudo usermod -G [grupo] [usuario]
+mkdir clase 5
+ls -l
+rm 5
+rm clase 5
+rmdir 5/
+rmdir clase/
+mkdir clase5
+ls -l
+cd clase5/
+ls - l
+ls -l
+echo hola
+echo hola > texto1.txt
+ls -l
+cat texto1.txt
+ls -l
+chmod 666 texto1.txt
+ls -l
+chmod 764 texto1.txt
+ls -l
+echo chau > texto2.txt
+ls -l
+chmod 644 texto2.txt
+ls -l
+cd ..
+ls -l
+chmod -R 777 clase5/
+ls -l
+cd clase5
+ls -l
+chmod 700 texto1.txt
+ls -l
+chmod 600 texto1.txt
+ls -l
+chmod 610 texto1.txt
+ls -l
+chmod 601 texto1.txt
+ls -l
+chmod g+r texto1.txt
+ls -l
+echo mi primer script
+echo Funciono ok
+cat << FIN > script1
+pwd
+ls -l
+echo mi primer script
+echo Funciono ok
+FIN
+
+ls -l
+cat script1
+bash script1
+vim script2.sh
+cat script2.sh
+chmod 764 script2.sh
+ls -l
+./script2.sh
+ls -l
+chmod 764 script2.sh
+cd ..
+pwd
+ssh-keygen -t ed25519
+cat $HOME/.ssh/*.pub
+ls -la
+ls -la .ssh/
+cat .shh/id_ed25519.pub
+cat .ssh/id_ed25519.pub
+pwd
+mkdir repogit
+cd repogit
+git clone git@github.com:LMatias00/TP_AySO_114_LopezMatias.git
+ls -l
+TP_AySO_114_LopezMatias cat README.md
+cd TP_AySO_114_LopezMatias/
+man grep 
+grep -i Home_url /etc/os-release
+grep -i Home_url /etc/os-release > dato_url.txt
+ls -l
+git status
+git add .
+git status
+git commit -m "subo el archivo datos_url"
+git config --global user.email "matiaslopez.1004@gmail.com"
+git config --global user.name "LMatias00"
+git commit -m "Subo el archivo datos_url"
+git status
+git push
+exit
+ssh-keygen -t ed25519
+cat $HOME/.ssh/*.pub
+ls -l
+ls - la
+ls -la
+cat .ssh/id_ed25519.pub
+pwd
+mkdir repogit
+cd repogit
+git clone git@github.com:LMatias00/TP_AySO_114_LopezMatias.git
+ls -l
+cd TP_AySO_114_LopezMatias/
+cat README.md
+pwd
+ls -l
+cat /etc/os-release
+grep -i Home_url /etc/os-release > datos_url.txt
+ls -l
+git status
+git add .
+git status
+git commit -m "subo el archivo datos_url"
+git status
+git push
+echo “Usuario=$(whoami)” > datos_usuario.txt
+ls
+grep "model name" /proc/cpuinfo | head -n1 >> datos_usuarios.txt
+tail datos_usuarios.txt
+git add datos_usuarios.txt
+git commit -m "feat: Añadiendo información de CPU"
+cat <<EOF >> README.md
+Alumno: <Tu-Nombre>
+División: <Numero>
+Turno: <Tu-Turno>
+EOF
+
+hola
+cat <<EOF >> README.md 
+Alumno: Matias Lopez
+Divisiòn: 114
+Turno: Mañana
+EOF
+
+git add README.md datos_usuarios.txt
+git commit -m "ADD: Añadiendo Readme y datos de usuario"
+git push
+mkdir -p ~/Materia1/uni1 ~/Materia1/uni2 ~/Materia1/uni3 ~/Materia2/uni1 ~/Materia2/uni2 ~/Materia2/uni3
+tree ~/Materia1 ~/Materia2
+echo 'mkdir -p ~/Materia1/uni1 ~/Materia1/uni2 ~/Materia1/uni3 ~/Materia2/uni1 ~/Materia2/uni2 ~/Materia2/uni3' > script_dir.sh
+chmod +x script_dir.sh
+git add .
+git commit -m "ADD: Añadiendo script"
+git push
+history -a
